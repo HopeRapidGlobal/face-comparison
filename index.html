@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>face comparison demo</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+      justify-items: start;
+    }
+
+    .image-container {
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      max-height: 600px;
+    }
+
+    video {
+      display: none;
+    }
+
+    #compareImage,
+    #result {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Face Comparison Demo</h1>
+  <h3>This demo is used for comparing the similarity of faces in two images</h3>
+  <p>How to use</p>
+  <ol>
+    <li>Prepare the source image - click 'Choose File' in Source Image area to select an image from device</li>
+    <li>
+      Prepare the target image, which is used for comparing with source image - choose one of the following ways:
+      <ul>
+        <li>Click 'Choose File' in Target Image area to select an image from device</li>
+        <li>Click 'Start video' button to start video, and then click 'Take photo' button to take a photo</li>
+      </ul>
+    </li>
+    <li>Click compare button to show result</li>
+  </ol>
+  <div class="container">
+    <div class="image-container">
+      <h4>Source Image</h4>
+      <input id="sourceInput" type="file">
+      <image id="sourceImage" />
+    </div>
+    <div class="image-container">
+      <h4>Target Image</h4>
+      <input id="targetInput" type="file">
+      <button id="startVideo">Start video</button>
+      <button id="takePhoto">Take photo</button>
+      <image id="targetImage" />
+      <video id="video" autoplay></video>
+    </div>
+    <button id="compareImage">Compare</button>
+    <div id="result"></div>
+  </div>
+  <script src="./src/libs/face-api/face-api.js"></script>
+  <script type="module" src="./src/index.js"></script>
+</body>
+</html>

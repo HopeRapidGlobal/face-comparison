@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "serve": "^13.0.2"
+  },
+  "scripts": {
+    "start": "serve"
+  }
+}
