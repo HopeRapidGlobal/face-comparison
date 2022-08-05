@@ -35,6 +35,8 @@ document.getElementById('takePhoto').addEventListener('click', () => {
 });
 
 document.getElementById('compareImage').addEventListener('click', async () => {
+  const resultElement = document.getElementById('result');
+  resultElement.innerHTML = 'Comparing...';
   const sourceElement = document.getElementById('sourceImage');
   const targetElement = document.getElementById(taragetElementId);
   const result = await faceapiModule.compare(sourceElement, targetElement);
