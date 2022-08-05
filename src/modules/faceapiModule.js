@@ -1,7 +1,7 @@
 
 const faceapiModule = {
   loadModels: () => {
-    const MODEL_URL = '/face-comparison/models';
+    const MODEL_URL = './models';
     return Promise.all([
       faceapi.nets.ageGenderNet.loadFromUri(MODEL_URL),
       faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
